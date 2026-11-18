@@ -1,0 +1,32 @@
+{
+  "version": "0.8.23-beta",
+  "version_code": 43,
+  "compile_sdk": 36,
+  "target_sdk": 36,
+  "min_sdk": 21,
+  "agp": "8.10.1",
+  "gradle": "8.11.1",
+  "jdk": "17.0.21+9",
+  "kotlin": "2.0.21",
+  "media3": "1.5.1",
+  "apk_bytes": 10484276,
+  "apk_sha256": "17cd8180aeccd295a4287d12631fa7e64453683b96ffac891312d750adb609a8",
+  "android_unit_tests": 102,
+  "lint_errors": 0,
+  "lint_warnings": 111,
+  "signature_matches_0_8_22": true,
+  "zip_alignment_16kb": true,
+  "preserved_assets": [
+    "assets/channels.json",
+    "assets/automatic-seed.json",
+    "assets/epg-config.json",
+    "assets/channel-logos.json"
+  ],
+  "boot_animation_content_preserved": true,
+  "aab_unsigned": true,
+  "aab_bytes": 9451686,
+  "aab_sha256": "552184ec45565b8dd42feed89655663dffdcf65fa2a392a887b2ef440f865796",
+  "new_permissions": false,
+  "android16_device_behavior": "UNVERIFIED",
+  "production_signing": "NOT_CONFIGURED"
+}
