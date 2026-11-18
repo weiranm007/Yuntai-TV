@@ -1,0 +1,18 @@
+{
+  "version": "0.8.22-beta",
+  "version_code": 42,
+  "bytes": 10493542,
+  "sha256": "4ae223573965601477f5677503e3a293197693e4c24885a49635ec8ee3448d7e",
+  "android_unit_tests": 102,
+  "lint_errors": 0,
+  "lint_warnings": 52,
+  "min_sdk": 21,
+  "upgrade_signature_matches_0_8_21": true,
+  "zip_alignment_16kb": true,
+  "new_permissions": false,
+  "backend_redeployment_required": false,
+  "automatic_visual_channel_identity_detection": "NOT_IMPLEMENTED",
+  "real_device_runtime": "UNVERIFIED",
+  "github_apk_download_verified": true,
+  "github_apk_url": "https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.22-beta-review.apk"
+}
