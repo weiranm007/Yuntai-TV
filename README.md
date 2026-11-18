@@ -3,6 +3,7 @@
 A minimal live TV app for Android TV, Google TV, and Android tablets. This repository distributes beta APKs, release notes, and the public privacy policy.
 
 - [Privacy Policy](PRIVACY_POLICY.md)
+- [Download the 0.8.21-beta APK](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.21-beta-review.apk)
 - [Download beta releases](https://github.com/weiranm007/Yuntai-TV/releases)
 - [Version 0.8.21-beta release notes](RELEASE_NOTES.md)
 
