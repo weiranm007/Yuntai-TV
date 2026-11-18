@@ -2,6 +2,14 @@
 
 Version code: **41**. Package: `org.example.iptv`. This is a **pre-release beta** signed with the existing review certificate.
 
+## Downloads
+
+- [Download APK](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.21-beta-review.apk)
+- [SHA-256 checksum](https://github.com/weiranm007/Yuntai-TV/blob/main/downloads/SHA256SUMS.txt)
+- [Validation manifest](https://github.com/weiranm007/Yuntai-TV/blob/main/downloads/VALIDATION.json)
+
+The APK is stored in this repository's `downloads` folder and linked here directly.
+
 ## What's new
 
 - Added an audio-only toggle to the playback toolbar and remote-control main menu.
