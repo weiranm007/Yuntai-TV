@@ -1,0 +1,2 @@
+1417c2462cd3f05e0debedde49468015f21a1a80371a9e43599287e01019682a  yuntai-tv-0.8.27-beta.apk
+f897c435db71ecbf3db77005d951df2a58aff4fd4de76eb60262d8bcee9791f2  yuntai-tv-0.8.27-beta-play.aab
