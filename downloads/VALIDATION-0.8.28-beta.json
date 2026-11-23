@@ -1,0 +1,42 @@
+{
+  "version": "0.8.28-beta",
+  "version_code": 48,
+  "package": "com.yuntai.android.apps.livetv",
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "compile_sdk": 36,
+  "database_schema": 16,
+  "android_jvm_tests": 118,
+  "android_test_failures": 0,
+  "python_tests": 128,
+  "python_tests_skipped": 0,
+  "python_firestore_emulator_tests_included": true,
+  "lint_errors": 0,
+  "lint_warnings": 121,
+  "apk_signature_verified": true,
+  "aab_signature_verified": true,
+  "existing_upload_certificate_retained": true,
+  "zip_alignment_16kb": true,
+  "production_content_assets_preserved": true,
+  "generated_baseline_profiles_changed": true,
+  "instrumented_test_apk_built": true,
+  "instrumented_tests_run": false,
+  "cloud_deployed_by_assistant": false,
+  "current_deployed_429_root_cause": "UNVERIFIED: operator or Groq; safe failed-request logs awaited",
+  "device_playback_and_subtitle_latency": "UNVERIFIED",
+  "source_and_long_session_stability": "UNVERIFIED",
+  "files": {
+    "yuntai-tv-0.8.28-beta.apk": {
+      "bytes": 10377292,
+      "sha256": "871211b37f6693b7b0ed99cc577d57bdef863c6d7a850409ca9b54dd9fcd3077"
+    },
+    "yuntai-tv-0.8.28-beta-play.aab": {
+      "bytes": 9487101,
+      "sha256": "211ed344176d23877f109e3a7ecd81e4bf4735917d4cb6699c2c8c095385b8ae"
+    },
+    "yuntai-caption-service-0.8.28-update.zip": {
+      "bytes": 22744,
+      "sha256": "bc434dd45d5e88b91a7574dfc04edd21b3c12708c8b2ba446f556ef40bdd4e65"
+    }
+  }
+}
