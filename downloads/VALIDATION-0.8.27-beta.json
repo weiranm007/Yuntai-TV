@@ -1,0 +1,48 @@
+{
+  "version": "0.8.27-beta",
+  "version_code": 47,
+  "package": "com.yuntai.android.apps.livetv",
+  "compile_sdk": 36,
+  "target_sdk": 36,
+  "min_sdk": 24,
+  "database_schema": 16,
+  "android_jvm_tests": 111,
+  "android_test_failures": 0,
+  "python_tests_discovered": 122,
+  "python_tests_passed": 109,
+  "python_tests_skipped": 13,
+  "lint_errors": 0,
+  "lint_warnings": 122,
+  "apk_signature_verified": true,
+  "aab_signature_verified": true,
+  "existing_upload_certificate_retained": true,
+  "zip_alignment_16kb": true,
+  "landscape_hardware_optional": true,
+  "new_permissions": false,
+  "source_catalog_subscription_epg_logo_assets_preserved": true,
+  "startup_animation_preserved": true,
+  "test_media_excluded_from_production": true,
+  "synthetic_fixture_ffprobe": "H264 640x360 + AAC",
+  "instrumented_cases": 6,
+  "instrumented_test_apk_built": true,
+  "instrumented_tests_run": false,
+  "device_test_blocker": "ADB cannot initialize Android home on read-only filesystem; device inventory unavailable",
+  "cloud_health_v1_http": 200,
+  "cloud_native_translate_http": 404,
+  "cloud_service_update_deployed": false,
+  "physical_device_ui_testing": "UNVERIFIED",
+  "real_network_channel_availability": "UNVERIFIED",
+  "play_console_processing": "UNVERIFIED",
+  "artifacts": [
+    {
+      "name": "yuntai-tv-0.8.27-beta.apk",
+      "bytes": 10373196,
+      "sha256": "1417c2462cd3f05e0debedde49468015f21a1a80371a9e43599287e01019682a"
+    },
+    {
+      "name": "yuntai-tv-0.8.27-beta-play.aab",
+      "bytes": 9483874,
+      "sha256": "f897c435db71ecbf3db77005d951df2a58aff4fd4de76eb60262d8bcee9791f2"
+    }
+  ]
+}
