@@ -1,29 +1,30 @@
 # Yuntai TV
 
-A minimal live TV app for Android TV, Google TV, Android phones and tablets. This repository distributes beta builds, release notes, validation manifests and the public privacy policy.
+A minimal live TV app for Android TV, Google TV, Android phones and tablets.
 
+- [Download the 0.8.29 APK](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.29.apk)
+- [Google Play upload AAB](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.29-play.aab)
+- [Release notes](releases/v0.8.29.md)
+- [Checksums](downloads/SHA256SUMS-0.8.29.txt)
+- [Validation manifest](downloads/VALIDATION-0.8.29.json)
 - [Privacy Policy](PRIVACY_POLICY.md)
-- [Download the 0.8.28-beta APK](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.28-beta.apk)
-- [Google Play upload AAB](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.28-beta-play.aab)
-- [Caption and pairing service update ZIP](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-caption-service-0.8.28-update.zip)
-- [Version 0.8.28-beta release notes](releases/v0.8.28-beta.md)
-- [Checksums](downloads/SHA256SUMS-0.8.28-beta.txt)
-- [Validation manifest](downloads/VALIDATION-0.8.28-beta.json)
-- [Beta releases](https://github.com/weiranm007/Yuntai-TV/releases)
+- [Releases](https://github.com/weiranm007/Yuntai-TV/releases)
 
-## Version 0.8.28-beta
+## Yun subtitles
 
-Native foreign-text translation can show Chinese without first flashing the original text. Rolling cues are deduplicated and merged into bounded batches, with limited preceding dialogue used only for semantic context. Stale results are discarded and channel changes invalidate old work. Native Chinese is preferred; original foreign captions are shown when translation is off. Bitmap/burned-in captions cannot be replaced by this text pipeline.
+Version 0.8.29 uses **one global subtitle feature switch**, named Yun · 字幕, plus one explicit combined audio/text-processing consent checkbox. When enabled, the app prefers native Chinese captions, translates available foreign text into Simplified Chinese, and uses consented audio recognition/translation when usable native cues are absent. There is no separate native-text translation switch. Foreign originals are hidden during text translation; bitmap or burned-in subtitles cannot be replaced by this text-only pipeline.
 
-Cloud audio/text processing now has one explicit combined consent, which existing users must reconfirm. Global caption and native foreign-text translation switches remain independent. No Groq API key is embedded in the APK.
+Existing fully enabled and consented workflows are retained. Earlier partial settings are not silently expanded into additional uploads: open Yun settings, enable the single switch and save. New installations remain off by default. Existing approved installations do not need reapproval. Provider/model/target remain operator-controlled; no API key is included in the APK.
 
-Private-beta pairing uses a five-minute, four-digit code with transactional collision protection and owner-only Cloud Shell confirmation. No fingerprint needs to be typed. Existing approvals persist. This does not enable anonymous self-authorization.
+The visible experimental label and version suffix have been removed. Device authorization, request signing, usage limits, consent validation and privacy controls remain in place.
 
-Settings use clearer heading/item/choice hierarchy while retaining the existing dark theme. The top menu background extends to the screen edges and no longer reserves a hidden status-bar gap; interactive controls still avoid visible system bars and display cutouts. Existing source maintenance, masked line identifiers, catalogs and startup animation are retained.
+## Playback and source maintenance
 
-**Deploy the companion server update for contextual translation and new short codes.** It preserves the existing authorization mode, secrets and quotas. See the [operator update guide](docs/NATIVE_SUBTITLE_UPDATE-0.8.28.md). The assistant packaged the update but did not deploy it.
+The app retains application-managed source discovery/health checks, masked numeric source identifiers, bounded playback-aware background work, source recovery, favorites, channel catalogs, program guides, audio-only listening, and the existing startup animation. A successful probe is not proof of sustained playback quality. Shared upstream/network conditions and content-provider availability still affect reliability.
 
-Rate limits are retained. Operator quota, provider throttling and concurrent-task feedback use distinct fixed error categories. The operator-versus-Groq cause of a reported intermittent HTTP 429 remains unverified pending safe failed-request logs. This release does not promise to resolve provider capacity or guarantee instantaneous subtitles.
+## Caption service and limits
+
+The existing deployed 0.8.28 translation endpoint is compatible; this Android-only update requires no new server deployment. The optional [0.8.28.1 quota patch](docs/CAPTION_QUOTA_UPDATE-0.8.28.1.md) changes server budget accounting separately. Installing an APK does not change/reset quotas or increase Groq capacity. Per-device allowance remains subject to global daily/minute caps, concurrency and provider limits. Caption accuracy and latency are not guaranteed.
 
 ## Installation and signing
 
@@ -35,12 +36,12 @@ Earlier review APKs used **org.example.iptv** and a different certificate. They 
 
 The APK is for direct sideload testing. The AAB is for Play Console upload and cannot be installed directly. Verify the SHA-256 checksum before use.
 
-## Validation and beta status
+## Build validation and known limits
 
-118 Android JVM tests and 128 Python tests passed. The final Python run included a local Firestore emulator with no skipped tests, covering REST approval, short-code collisions, parallel requests, cancellation and authorization lifecycle. Lint reported 0 errors and 121 warnings. APK/AAB signatures, retained upload certificate, ZIP integrity, SDK values and 16 KiB APK ZIP alignment were checked. Production content assets were compared with 0.8.27 and preserved; generated baseline profiles changed.
+119 Android JVM tests passed. Release APK/AAB builds completed; lint reported 0 errors and 121 warnings. Signatures, retained upload certificate, ZIP integrity, SDK/package values and 16 KiB APK ZIP alignment were checked. Production channel/source/guide/logo/startup assets match 0.8.28; generated baseline profiles change with code.
 
-Six Android media-test cases were compiled but not executed on a device. Physical-device focus, scrolling, menu placement, subtitle latency/semantic quality, provider capacity, long-session playback and Play Console processing remain unverified. Automated checks do not establish production reliability or approval. No update was submitted for Play review by this workflow.
+Python tests were not rerun for this Android-only change. Physical-device settings/focus, actual subtitle routing, model quality/latency, long-session playback and Play Console processing remain unverified. No Play review submission was made by this workflow. Removing a label is not a claim of production certification.
 
-Broadcasters and content providers control availability, territorial restrictions and distribution rights. Installing the app does not grant a content subscription or rebroadcasting rights.
+Content providers control availability and territorial/distribution rights. Installing this app does not grant a content subscription or rebroadcasting rights.
 
-Privacy contact and data-deletion requests: **yuntaiapp@gmail.com**. Never submit API keys, full stream URLs, audio or subtitle text in public issues.
+Privacy contact and deletion requests: **yuntaiapp@gmail.com**. Do not post API keys, full playback URLs, audio or subtitle text in public issues.
