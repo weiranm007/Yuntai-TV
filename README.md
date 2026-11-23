@@ -1,34 +1,39 @@
 # Yuntai TV
 
-A minimal live TV app for Android TV, Google TV, and Android tablets. This repository distributes beta APKs, release notes, and the public privacy policy.
+A minimal live TV app for Android TV, Google TV, Android phones and tablets. This repository distributes beta builds, release notes, validation manifests and the public privacy policy.
 
 - [Privacy Policy](PRIVACY_POLICY.md)
-- [Download the 0.8.23-beta APK](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.23-beta-api36-review.apk)
-- [Download beta releases](https://github.com/weiranm007/Yuntai-TV/releases)
-- [Version 0.8.23-beta release notes](releases/v0.8.23-beta.md)
+- [Download the 0.8.26-beta APK](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.26-beta.apk)
+- [Google Play upload AAB](https://raw.githubusercontent.com/weiranm007/Yuntai-TV/main/downloads/yuntai-tv-0.8.26-beta-play.aab)
+- [Version 0.8.26-beta release notes](releases/v0.8.26-beta.md)
+- [Checksums](downloads/SHA256SUMS-0.8.26-beta.txt)
+- [Validation manifest](downloads/VALIDATION-0.8.26-beta.json)
+- [Beta releases](https://github.com/weiranm007/Yuntai-TV/releases)
 
-## Version 0.8.23-beta
+## Version 0.8.26-beta
 
-Compile SDK and target SDK are now **36**; minimum SDK remains **21**. The build uses Android Gradle Plugin 8.10.1 and Gradle 8.11.1. System-bar and Back handling were updated for Android 16. APK and unsigned release AAB builds passed, with 102 JVM tests passing and lint reporting 0 errors / 111 warnings. Android 16 physical-device behavior remains unverified. A production-signed bundle is still required for Google Play submission.
+The main menu now contains Settings, Current channel management, Audio-only listening, Help & feedback, and Exit. Playlist import, Automatic sources, duplicate captions and duplicate programme-guide entries were removed from this menu. Existing automatic refresh behavior is retained.
 
-Audio-only listening mode is available from a blue slide switch in the playback toolbar and from the remote-control main menu. It retains channel audio, displays the current logo and name, and now shows a narrower live frequency spectrum computed from current decoded PCM. A persistent button or the Back key restores video after closing any open overlays.
+Settings are grouped under Picture & playback, Captions & translation, Interface & display, and Help & about. Current channel management retains favorites, source selection/enable/disable, and playback; it no longer presents add-source, official-watch-link, or diagnostics actions. An empty source list no longer opens an add-source form.
 
-An independent recovery banner explains sustained buffering, active recovery, retry countdowns, network disconnection, and successful restoration. It does not depend on the auto-hiding status bar.
+Audio-only listening retains the live channel audio, with a compact spectrum computed locally from decoded PCM and a persistent return-to-video action. Optional cloud AI captions remain a separate consent-based beta feature. Recovery notices remain available during buffering and recovery.
 
-Spectrum processing is local and does not use the microphone, record audio, or automatically upload it. Optional AI captions require separate device approval and explicit audio-processing consent. Listening mode does not guarantee background or screen-off playback; existing Android lifecycle and picture-in-picture restrictions apply. Bandwidth savings depend on the source's audio rendition.
+## Installation and signing
 
-Automatic screenshot/OCR channel-identity detection is not enabled. A commercial or missing logo is not treated as proof of a mismatched channel.
+Minimum Android version: **Android 7.0 / API 24**. Compile SDK and target SDK: **36**. Landscape, touchscreen and Leanback hardware features are explicitly optional.
 
-## Installation
+The current application ID is **com.yuntai.android.apps.livetv**. The APK and AAB are signed with the retained private upload certificate used for the recent Play bundles. The key is not distributed in this repository.
 
-Download the APK from [Releases](https://github.com/weiranm007/Yuntai-TV/releases), verify its SHA-256 checksum, and allow installation when prompted by Android. Version 0.8.23-beta retains the existing beta review certificate and can update an older beta signed with that certificate. Existing caption approval and configuration are preserved; no backend redeployment is needed for this version. Builds with another signing certificate may not update in place.
+Earlier review APKs used **org.example.iptv** and a different certificate. They are separate applications; settings, favorites and caption-device approval do not automatically migrate to the new application ID. A Google Play-installed build may use Google's separate app signing certificate and should be updated through Play when a sideload certificate does not match. Do not uninstall solely to force an update without considering local data.
 
-Minimum Android version: Android 5.0 / API 21. Cloud authorization and captions require Android 6.0 / API 23 or later and the configured authorization workflow.
+The APK is for direct sideload testing. The AAB is for Play Console upload and cannot be installed directly. Verify the SHA-256 checksum before use.
 
-## Beta status
+## Validation and beta status
 
-This is a review-signed beta, not a Google Play production release. Automated checks do not establish real-device playback quality. See the release notes and validation manifest for completed checks and outstanding device tests.
+Release APK and AAB builds completed; 102 JVM tests passed. Lint reported 0 errors and 114 warnings. Signatures, ZIP integrity, package/SDK values and 16 KiB APK ZIP alignment were checked. Catalog/source/guide/logo assets and startup-video content were compared with 0.8.25 and preserved.
 
-Broadcasters and content providers control their content, availability, territory restrictions, and distribution rights. Installing this app does not grant a content subscription or rebroadcasting rights.
+Physical-device focus, scrolling, settings dialogs, Android 16 behavior, long-session playback and Play Console processing remain unverified. Automated checks do not establish production reliability or approval.
 
-Privacy contact and data-deletion requests: **yuntaiapp@gmail.com**. Never submit API keys, full stream URLs, raw reports, audio, or subtitle text in public issues.
+Broadcasters and content providers control content availability, territory restrictions and distribution rights. Installing this app does not grant a content subscription or rebroadcasting rights.
+
+Privacy contact and data-deletion requests: **yuntaiapp@gmail.com**. Never submit API keys, full stream URLs, raw reports, audio or subtitle text in public issues.
