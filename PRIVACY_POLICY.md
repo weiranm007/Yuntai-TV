@@ -1,7 +1,7 @@
 # Yuntai TV Privacy Policy
 
-**Effective date and last updated: November 18, 2026**  
-**Application:** Yuntai TV for Android TV, Google TV, and Android tablets (`org.example.iptv`).  
+**Effective date and last updated: November 23, 2026**  
+**Application:** Yuntai TV for Android TV, Google TV, Android phones and tablets (`com.yuntai.android.apps.livetv`; older review builds used `org.example.iptv`).  
 **Operator:** The Yuntai TV project operator.  
 **Privacy contact:** [yuntaiapp@gmail.com](mailto:yuntaiapp@gmail.com).
 
@@ -17,13 +17,17 @@ The app does not require a user account and does not request microphone, camera,
 
 ## 2. Audio-only listening mode
 
-Audio-only mode disables the video track while continuing channel audio. Its waveform is computed locally from decoded playback-audio amplitude. It does not use the microphone, create recordings, or automatically send audio to the operator or another service. Network savings depend on whether the source offers an independent audio rendition; disabling video does not necessarily reduce download traffic.
+Audio-only mode disables the video track while continuing channel audio. Its frequency spectrum is computed locally from decoded playback audio. It does not use the microphone, create recordings, or automatically send audio to the operator or another service. Network savings depend on whether the source offers an independent audio rendition; disabling video does not necessarily reduce download traffic.
 
 If you separately enable AI captions and consent to cloud audio processing, the audio transmission described in Section 3 may continue while you use audio-only mode. Listening mode and cloud-audio consent are separate controls.
 
 ## 3. Optional AI captions and Chinese translation
 
 AI captions are off by default. Audio is sent for this feature only after you enable it, explicitly consent to cloud processing, and obtain service authorization for the installation. Short clips of the channel's playback audio are sent over HTTPS to the operator's caption service and then to Groq for speech recognition and Simplified Chinese translation. The service also processes device authorization identifiers, signed proofs, session information, and request counters to authorize access, prevent replay and abuse, and enforce usage limits.
+
+When usable native Chinese captions are supplied by a stream, the app can display them locally without speech recognition. Native foreign-language subtitle translation is **off by default** and requires a separate global translation choice and explicit consent to send subtitle text to the operator and Groq. Only bounded text excerpts are sent over HTTPS to the operator's authenticated translation endpoint, then to the operator-selected Groq model; they are not submitted to speech recognition. If translation is unavailable, original subtitles remain available. Bitmap subtitles are displayed as supplied; this feature does not perform OCR.
+
+During native-caption availability the app suppresses duplicate audio transcription. If usable native cues are absent, the separately enabled and consented audio-caption fallback may run. Switching channels or disabling the relevant feature cancels pending work and rejects outdated results. Native captions and translations may be delayed, missing, or inaccurate.
 
 Audio comes from the media player, not your microphone. The operator does not intentionally persist audio or subtitle text in app recording files, operator databases, or application diagnostic logs. Audio and text are present in memory and network requests during processing. Disabling captions or withdrawing consent stops collection of new upload clips, cancels audio requests, and discards outdated results. A request already sent to a provider may still finish processing.
 
@@ -45,7 +49,7 @@ Report bodies do not include full stream URLs, IP addresses, access tokens, Groq
 
 Successful submissions receive a `YT-...` reference. Failed submissions remain on the device, with a maximum of five pending reports and a manual retry option. A `LOCAL-...` reference does not mean a report reached the server. The local diagnostic event ring holds at most 64 structured events and can persist across app restarts.
 
-Cloud feedback records are configured to expire after 14 days. TTL deletion is asynchronous, so physical deletion may occur after the expiry time. A 10,000-record ring limit may overwrite older reports sooner. Do not post raw diagnostics, credentials, signed URLs, or other personal information in public GitHub issues.
+Cloud feedback records are configured to expire after 14 days. TTL deletion is asynchronous, so physical deletion may occur after the expiry time. The service limits stored feedback to 10,000 reports; additional submissions can be rejected until space becomes available. Do not post raw diagnostics, credentials, signed URLs, or other personal information in public GitHub issues.
 
 ## 6. Cloud infrastructure, logs, and international transfers
 
@@ -57,8 +61,8 @@ The app does not include an operator-integrated advertising or behavioral-market
 
 ## 7. Your choices and deletion requests
 
-- Disable AI captions and withdraw cloud-audio consent in settings to stop future audio uploads. Available channels can still be watched without AI captions.
-- You can disable automatic source updates or nearby-channel prefetching. Watching a channel still requires requests to its content provider.
+- Disable AI captions and withdraw cloud-audio consent in settings to stop future audio uploads. Disable native subtitle translation or withdraw its separate subtitle-text consent to stop future text translation requests. Available channels can still be watched without cloud captions.
+- Source maintenance and limited nearby-channel prefetching are managed automatically. Checks are designed to yield when playback buffer is low, and have time, request-count and media-read budgets. Exiting with the app's Exit action cancels current source checks and their scheduled job; a later launch resumes scheduling. Device-level background-data controls may also apply. Watching a channel still requires requests to its content provider.
 - Clear app storage in Android settings or uninstall the app to remove local favorites, settings, caches, and diagnostics. This does not immediately delete existing cloud feedback or authorization records.
 - Contact **yuntaiapp@gmail.com** to request access to or deletion of cloud reports, or revocation of device authorization. Provide a report reference or device fingerprint, not a key, recording, or full playback URL. We may need proportionate verification that the request concerns your installation. Records needed for legal obligations or security and abuse prevention may need to be retained longer.
 
