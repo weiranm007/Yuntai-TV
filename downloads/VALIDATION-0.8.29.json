@@ -1,0 +1,32 @@
+{
+  "version": "0.8.29",
+  "version_code": 49,
+  "package": "com.yuntai.android.apps.livetv",
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "android_jvm_tests": 119,
+  "android_test_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 121,
+  "apk_signature_verified": true,
+  "aab_signature_verified": true,
+  "existing_upload_certificate_retained": true,
+  "zip_alignment_16kb": true,
+  "production_content_assets_preserved": true,
+  "subtitle_feature_toggle_count": 1,
+  "combined_consent_checkbox_retained": true,
+  "backend_changes_required": false,
+  "server_quotas_changed_by_apk": false,
+  "physical_device_ui_playback_translation": "UNVERIFIED",
+  "python_tests": "Not rerun: this release changes Android only",
+  "files": {
+    "yuntai-tv-0.8.29.apk": {
+      "bytes": 10377292,
+      "sha256": "ee564a7806322ef7c2c65ba6a34498186614abfd9a7e4b8967fa76741159c0e1"
+    },
+    "yuntai-tv-0.8.29-play.aab": {
+      "bytes": 9486485,
+      "sha256": "633d961f6528a8c23548aa4edab07630d9adb1eccf738a9eab2bd41baaff2b78"
+    }
+  }
+}
