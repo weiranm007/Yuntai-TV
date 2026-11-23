@@ -1,0 +1,15 @@
+{
+  "version": "0.8.28.1-service",
+  "apk_required": false,
+  "python_tests_passed": 132,
+  "python_tests_skipped": 0,
+  "local_firestore_integration": true,
+  "device_daily_budget_seconds": 7200,
+  "text_batch_charge_seconds": 4,
+  "audio_charge": "validated duration, whole seconds rounded up, 1-4",
+  "global_limits_changed": false,
+  "existing_usage_preserved": true,
+  "cloud_deployed_by_assistant": false,
+  "sha256": "1f61e5b80242ab28a4b10045a7fe9ea8579897aa9b4a29d60058e8739af6fab1",
+  "bytes": 22422
+}
